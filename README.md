@@ -1,72 +1,101 @@
-Task Manager – React Kanban Board
+# Task Manager
 
-A simple task-management application built with React.
-It allows creating tasks, editing them, organizing them into boards, and dragging them between columns (To-Do, In-Progress, Completed).
-Everything is stored in LocalStorage so the data stays even after refresh.
+A clean and minimal task-management application built with React and Tailwind CSS.  
+It provides an easy way to organize work using boards, drag-and-drop interaction, filters, and a simple task editor.
 
-Features
+---
 
-Create, update and delete tasks
+## 🚀 Features
 
-Choose priority, status, description and due date
+- Create, edit, and delete tasks  
+- Drag and drop tasks between **To-Do**, **In-Progress**, and **Completed**  
+- Priority labels (Low, Medium, High)  
+- Due-date display and sorting  
+- LocalStorage persistence (tasks remain saved)  
+- Duplicate-task detection  
+- Smooth UI animations and polished layout  
+- Fully responsive design
 
-Drag & drop support for moving tasks between boards
+---
 
-Filters for priority and status
+## 📸 Screenshots
 
-Sorting by newest, oldest or closest deadline
+### Dashboard View  
+![Dashboard](images/screen1.png)
 
-Clean and responsive UI built with TailwindCSS
+### Task Modal  
+![Task Modal](images/screen2.png)
 
-No backend required (LocalStorage based)
+---
 
-Tech Used
+## 🛠️ Tech Stack
 
-React
+- **React (Vite)**
+- **Tailwind CSS**
+- **@hello-pangea/dnd** (Drag & Drop)
+- **Day.js** (Date handling)
+- **LocalStorage** for data persistence
 
-TailwindCSS
+---
 
-@hello-pangea/dnd (Drag and Drop)
+## 📂 Folder Structure
 
-Day.js
+task-manager/
+│── public/
+│── src/
+│ ├── assets/
+│ ├── components/
+│ │ ├── BoardColumn.jsx
+│ │ ├── FilterBar.jsx
+│ │ ├── Navbar.jsx
+│ │ ├── TaskCard.jsx
+│ │ └── TaskModal.jsx
+│ ├── data/
+│ │ └── tasks.json
+│ ├── hooks/
+│ │ └── useLocalStorage.js
+│ ├── App.jsx
+│ ├── index.css
+│ └── main.jsx
+│
+├── README.md
+├── package.json
+├── tailwind.config.cjs
+└── vite.config.js
 
-UUID
+yaml
+Copy code
 
-LocalStorage for persistence
+---
 
-Project Structure
-src/
-  components/
-    Navbar.jsx
-    FilterBar.jsx
-    BoardColumn.jsx
-    TaskCard.jsx
-    TaskModal.jsx
-  hooks/
-    useLocalStorage.js
-  data/
-    tasks.json
-  App.jsx
-  index.css
+## 🔧 Installation & Setup
 
-How to Run
+### 1. Clone the repo
 
-Install packages:
-
+```sh
+git clone https://github.com/saniya-fathima001/task-manager.git
+cd task-manager
+2. Install dependencies
 npm install
 
-
-Start development server:
-
+3. Start the development server
 npm run dev
 
-
-Build for production:
-
+Build for production
 npm run build
-npm run preview
 
-Author
-
+ Author
 Saniya Fathima
-Task Manager Project
+GitHub: https://github.com/saniya-fathima001
+
+📄 License
+This project is open source and available under the MIT License.
+
+✔️ Notes
+All tasks are stored locally in your browser using LocalStorage.
+
+The app does not require any backend or database to run.
+
+It is designed to be simple, easy to follow, and beginner-friendly.
+
+Feel free to contribute or open issues if you'd like to improve the project!
