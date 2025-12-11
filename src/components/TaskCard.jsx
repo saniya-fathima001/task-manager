@@ -19,15 +19,12 @@ export default function TaskCard({ task, isDuplicate, onClick }) {
             "
         >
             <div
-                className={`
-                    h-1 w-full rounded-t-lg
-                    ${task.priority === "High"
+                className={`h-1 w-full rounded-t-lg ${task.priority === "High"
                         ? "bg-red-500"
                         : task.priority === "Medium"
                             ? "bg-yellow-500"
                             : "bg-green-500"
-                    }
-                `}
+                    }`}
             />
 
             <div className="p-3">

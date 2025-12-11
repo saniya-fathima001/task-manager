@@ -20,7 +20,6 @@ export default function App() {
     sort: "newest",
   });
 
-  // Apply filters and sorting
   const getFilteredTasks = () => {
     let result = [...tasks];
 
@@ -80,7 +79,6 @@ export default function App() {
     setIsModalOpen(false);
   };
 
-  // Update task status when dragged between columns
   const handleDragEnd = (result) => {
     const { source, destination, draggableId } = result;
     if (!destination) return;
@@ -123,9 +121,7 @@ export default function App() {
 
               <BoardColumn
                 title="In-Progress"
-                tasks={filteredTasks.filter(
-                  (t) => t.status === "In-Progress"
-                )}
+                tasks={filteredTasks.filter((t) => t.status === "In-Progress")}
                 onTaskClick={handleTaskClick}
               />
 
