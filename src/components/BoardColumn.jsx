@@ -24,7 +24,7 @@ export default function BoardColumn({ title, tasks, onTaskClick }) {
                         h-[calc(100vh-190px)] overflow-y-auto transition-all duration-200
                         ${snapshot.isDraggingOver ? "bg-blue-50/70 border-blue-300" : "bg-white/80"}`}
                     style={{
-                        touchAction: "none",
+                        touchAction: "manipulation",
                         WebkitOverflowScrolling: "touch"
                     }}
                 >
@@ -53,17 +53,10 @@ export default function BoardColumn({ title, tasks, onTaskClick }) {
                                         ref={dragprovided.innerRef}
                                         {...dragprovided.draggableProps}
                                         {...dragprovided.dragHandleProps}
-                                        style={{
-                                            ...dragprovided.draggableProps.style,
-                                            height: dragSnapshot.isDragging ? "auto" : "auto",
-                                            transform: dragSnapshot.isDragging
-                                                ? dragprovided.draggableProps.style?.transform
-                                                : dragprovided.draggableProps.style?.transform,
-                                            pointerEvents: dragSnapshot.isDragging ? "none" : "auto"
-                                        }}
+                                        style={dragprovided.draggableProps.style}
                                         className={`transition-all duration-200 ${dragSnapshot.isDragging
-                                                ? "opacity-80 scale-[1.03]"
-                                                : "opacity-100"
+                                            ? "opacity-80 scale-[1.03]"
+                                            : "opacity-100"
                                             }`}
                                     >
                                         <TaskCard
