@@ -63,9 +63,6 @@ task-manager/
 ├── tailwind.config.cjs
 └── vite.config.js
 
-yaml
-Copy code
-
 ---
 
 ## 🔧 Installation & Setup
