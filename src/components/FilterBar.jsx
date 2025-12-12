@@ -2,10 +2,14 @@ export default function FilterBar({ filters, setFilters }) {
     return (
         <div
             className="
-                bg-white/80 backdrop-blur-sm 
-                p-4 rounded-xl shadow-sm border border-slate-200 
+                bg-white 
+                p-4 rounded-lg border border-slate-200 
                 flex flex-wrap gap-4 items-center
             "
+            style={{
+                willChange: "auto",
+                transform: "none",
+            }}
         >
             <div className="flex items-center gap-2">
                 <span className="text-xs text-slate-600 font-medium">Priority</span>
@@ -18,7 +22,6 @@ export default function FilterBar({ filters, setFilters }) {
                     className="
                         px-3 py-1.5 rounded-lg text-sm border 
                         bg-white shadow-sm
-                        hover:border-blue-400 
                         focus:ring-2 focus:ring-blue-500 outline-none
                     "
                 >
@@ -40,7 +43,6 @@ export default function FilterBar({ filters, setFilters }) {
                     className="
                         px-3 py-1.5 rounded-lg text-sm border 
                         bg-white shadow-sm
-                        hover:border-blue-400 
                         focus:ring-2 focus:ring-blue-500 outline-none
                     "
                 >
@@ -62,7 +64,6 @@ export default function FilterBar({ filters, setFilters }) {
                     className="
                         px-3 py-1.5 rounded-lg text-sm border
                         bg-white shadow-sm
-                        hover:border-blue-400 
                         focus:ring-2 focus:ring-blue-500 outline-none
                     "
                 >

@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 const priorityColors = {
     Low: "bg-emerald-100 text-emerald-700 border-emerald-300",
     Medium: "bg-amber-100 text-amber-700 border-amber-300",
-    High: "bg-red-100 text-red-700 border-red-300",
+    High: "bg-red-100 text-red-700 border-red-300"
 };
 
 export default function TaskCard({ task, isDuplicate, onClick }) {
@@ -11,11 +11,9 @@ export default function TaskCard({ task, isDuplicate, onClick }) {
         <div
             onClick={() => onClick(task)}
             className="
-                bg-white/90 backdrop-blur-sm rounded-lg
-                border border-slate-200 shadow-sm
-                hover:shadow-md hover:-translate-y-[2px]
-                cursor-pointer transition-all duration-200
-                active:scale-[0.97]
+                bg-white rounded-lg border border-slate-200 shadow-sm
+                hover:shadow-md cursor-pointer
+                transition-all duration-200
             "
         >
             <div
@@ -34,12 +32,7 @@ export default function TaskCard({ task, isDuplicate, onClick }) {
                     </h3>
 
                     {isDuplicate && (
-                        <span
-                            className="
-                                text-[10px] px-2 py-0.5 rounded-full ml-2
-                                bg-purple-100 text-purple-700 border border-purple-300
-                            "
-                        >
+                        <span className="text-[10px] px-2 py-0.5 rounded-full ml-2 bg-purple-100 text-purple-700 border border-purple-300">
                             Duplicate
                         </span>
                     )}
@@ -59,9 +52,7 @@ export default function TaskCard({ task, isDuplicate, onClick }) {
                     </span>
 
                     <span className="text-slate-500">
-                        {task.dueDate
-                            ? dayjs(task.dueDate).format("DD MMM")
-                            : "No due date"}
+                        {task.dueDate ? dayjs(task.dueDate).format("DD MMM") : "No due date"}
                     </span>
                 </div>
             </div>

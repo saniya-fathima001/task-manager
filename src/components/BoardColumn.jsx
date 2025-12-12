@@ -10,7 +10,7 @@ export default function BoardColumn({ title, tasks, onTaskClick }) {
     const accentColor = {
         "To-Do": "bg-red-400",
         "In-Progress": "bg-amber-400",
-        Completed: "bg-green-400",
+        Completed: "bg-green-400"
     }[title];
 
     return (
@@ -19,20 +19,17 @@ export default function BoardColumn({ title, tasks, onTaskClick }) {
                 <div
                     ref={provided.innerRef}
                     {...provided.droppableProps}
-                    className={`rounded-xl shadow-sm border border-slate-200
-                        backdrop-blur-sm bg-white/80
-                        h-[calc(100vh-190px)] overflow-y-auto transition-all duration-200
-                        ${snapshot.isDraggingOver ? "bg-blue-50/70 border-blue-300" : "bg-white/80"}`}
-                    style={{
-                        touchAction: "manipulation",
-                        WebkitOverflowScrolling: "touch"
-                    }}
+                    className={`rounded-xl shadow-sm border border-slate-200 bg-white
+                        h-[calc(100vh-190px)] overflow-y-auto
+                        ${snapshot.isDraggingOver ? "bg-blue-50" : "bg-white"}`}
                 >
                     <div className={`h-1 w-full rounded-t-xl ${accentColor}`} />
 
-                    <div className="flex justify-between items-center px-3 py-3 border-b bg-white/60 backdrop-blur">
+                    <div className="flex justify-between items-center px-3 py-3 border-b bg-white">
                         <h2 className="font-semibold text-slate-700">{title}</h2>
-                        <span className="text-xs text-slate-500 font-medium">{tasks.length}</span>
+                        <span className="text-xs text-slate-500 font-medium">
+                            {tasks.length}
+                        </span>
                     </div>
 
                     <div className="flex flex-col gap-3 p-3 pb-10">
@@ -48,16 +45,13 @@ export default function BoardColumn({ title, tasks, onTaskClick }) {
                                 draggableId={task.id.toString()}
                                 index={index}
                             >
-                                {(dragprovided, dragSnapshot) => (
+                                {(dragProvided, dragSnapshot) => (
                                     <div
-                                        ref={dragprovided.innerRef}
-                                        {...dragprovided.draggableProps}
-                                        {...dragprovided.dragHandleProps}
-                                        style={dragprovided.draggableProps.style}
-                                        className={`transition-all duration-200 ${dragSnapshot.isDragging
-                                            ? "opacity-80 scale-[1.03]"
-                                            : "opacity-100"
-                                            }`}
+                                        ref={dragProvided.innerRef}
+                                        {...dragProvided.draggableProps}
+                                        {...dragProvided.dragHandleProps}
+                                        style={dragProvided.draggableProps.style}
+                                        className={dragSnapshot.isDragging ? "opacity-90" : "opacity-100"}
                                     >
                                         <TaskCard
                                             task={task}
